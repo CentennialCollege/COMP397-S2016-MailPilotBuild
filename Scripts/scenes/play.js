@@ -27,9 +27,12 @@ var scenes;
             // player object
             this._player = new objects.Player("plane");
             this.addChild(this._player);
-            // cloud object
-            this._cloud = new objects.Cloud("cloud");
-            this.addChild(this._cloud);
+            // cloud array
+            this._clouds = new Array();
+            for (var count = 0; count < 3; count++) {
+                this._clouds.push(new objects.Cloud("cloud"));
+                this.addChild(this._clouds[count]);
+            }
             // add this scene to the global scene container
             core.stage.addChild(this);
         };
@@ -37,7 +40,10 @@ var scenes;
             this._ocean.update();
             this._island.update();
             this._player.update();
-            this._cloud.update();
+            // update each cloud
+            this._clouds.forEach(function (cloud) {
+                cloud.update();
+            });
         };
         // EVENT HANDLERS ++++++++++++++++
         Play.prototype._startButtonClick = function (event) {
