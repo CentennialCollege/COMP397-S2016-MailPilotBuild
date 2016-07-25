@@ -4,7 +4,7 @@ module objects {
      * 
      * @export
      * @class Ocean
-     * @extends {createjs.Bitmap}
+     * @extends {objects.GameObject}
      */
     export class Ocean extends createjs.Bitmap {
         // PRIVATE INSTANCE VARIABLES ++++++++++++++++++++++++++++

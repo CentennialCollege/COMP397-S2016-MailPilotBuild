@@ -10,10 +10,12 @@ var objects;
      *
      * @export
      * @class Player
-     * @extends {createjs.Bitmap}
+     * @extends {objects.GameObject}
      */
     var Player = (function (_super) {
         __extends(Player, _super);
+        // PRIVATE INSTANCE VARIABLES ++++++++++++++++++++++++++++
+        // PUBLIC PROPERTIES +++++++++++++++++++++++++++++++++++++++
         // CONSTRUCTORS +++++++++++++++++++++++++++++++++++++++++++
         /**
          * Creates an instance of Island.
@@ -22,30 +24,9 @@ var objects;
          * @param {string} imageString
          */
         function Player(imageString) {
-            _super.call(this, core.assets.getResult(imageString));
+            _super.call(this, imageString);
             this.start();
         }
-        Object.defineProperty(Player.prototype, "width", {
-            // PUBLIC PROPERTIES +++++++++++++++++++++++++++++++++++++++
-            get: function () {
-                return this._width;
-            },
-            set: function (newWidth) {
-                this._width = newWidth;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(Player.prototype, "height", {
-            get: function () {
-                return this._height;
-            },
-            set: function (newHeight) {
-                this._height = newHeight;
-            },
-            enumerable: true,
-            configurable: true
-        });
         /**
         * This method checks if the object has reached its boundaries
         *
@@ -74,10 +55,6 @@ var objects;
          * @returns {void}
          */
         Player.prototype.start = function () {
-            this.width = this.getBounds().width;
-            this.height = this.getBounds().height;
-            this.regX = this.width * 0.5;
-            this.regY = this.height * 0.5;
             this.y = 430;
         };
         /**
@@ -90,11 +67,12 @@ var objects;
          */
         Player.prototype.update = function () {
             // player to follow mouse
+            this.position = new objects.Vector2(this.x, this.y);
             this.x = core.stage.mouseX;
             this._checkBounds();
         };
         return Player;
-    }(createjs.Bitmap));
+    }(objects.GameObject));
     objects.Player = Player;
 })(objects || (objects = {}));
 //# sourceMappingURL=player.js.map
