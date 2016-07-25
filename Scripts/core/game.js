@@ -27,7 +27,10 @@ var core;
         { id: "ocean", src: "../../Assets/images/ocean.gif" },
         { id: "island", src: "../../Assets/images/island.png" },
         { id: "plane", src: "../../Assets/images/plane.png" },
-        { id: "cloud", src: "../../Assets/images/cloud.png" }
+        { id: "cloud", src: "../../Assets/images/cloud.png" },
+        { id: "thunder", src: "../../Assets/audio/thunder.ogg" },
+        { id: "yay", src: "../../Assets/audio/yay.ogg" },
+        { id: "engine", src: "../../Assets/audio/engine.ogg" }
     ];
     /**
      * This method preloads assets for the game
