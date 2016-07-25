@@ -21,6 +21,11 @@ namespace core {
     // create a reference to a stage container
     export let stage: createjs.Stage;
 
+    // score and lives variables
+    export let score: number = 0;
+    export let highScore: number = 0;
+    export let lives: number = 5;
+
     let helloLabel: objects.Label;
 
     let startButton: objects.Button; // reference to our button class
@@ -33,10 +38,10 @@ namespace core {
     let over: scenes.Over;
     let play: scenes.Play;
 
-    
+
 
     // asset manifest for images and sounds
-    let assetData:objects.Asset[] = [
+    let assetData: objects.Asset[] = [
         { id: "startButton", src: "../../Assets/images/startButton.png" },
         { id: "restartButton", src: "../../Assets/images/restartButton.png" },
         { id: "nextButton", src: "../../Assets/images/nextButton.png" },

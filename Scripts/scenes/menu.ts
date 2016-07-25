@@ -1,6 +1,7 @@
 module scenes {
     export class Menu extends objects.Scene {
         //  PRIVATE INSTANCE VARIABLES
+        private _ocean: objects.Ocean;
         private _menuLabel: objects.Label;
         private _startButton: objects.Button;
 
@@ -16,10 +17,14 @@ module scenes {
          * 
          */
         public Start():void {
+            // Add Ocean Background
+            this._ocean = new objects.Ocean("ocean");
+            this.addChild(this._ocean);
+
             // Add Menu Label
             this._menuLabel = new objects.Label(
-                "MENU SCENE", "60px","Consolas", "#000000",
-                320, 240
+                "MAIL PILOT", "60px","Consolas", "#FFFF00",
+                320, 240, true
                 );
             this.addChild(this._menuLabel);
 
@@ -38,6 +43,7 @@ module scenes {
 
         public Update():void {
             // scene updates happen here...
+            this._ocean.update();
         }
 
         // EVENT HANDLERS ++++++++++++++++

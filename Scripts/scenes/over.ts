@@ -1,8 +1,10 @@
 module scenes {
     export class Over extends objects.Scene {
         //  PRIVATE INSTANCE VARIABLES
+        private _ocean:objects.Ocean;
         private _gameOverLabel: objects.Label;
         private _restartButton: objects.Button;
+        private _finalScoreLabel: objects.Label;
 
         /**
          * Creates an instance of Menu.
@@ -16,12 +18,23 @@ module scenes {
          * 
          */
         public Start():void {
+            // Add Ocean Background
+            this._ocean = new objects.Ocean("ocean");
+            this.addChild(this._ocean);
+
             // Add Menu Label
             this._gameOverLabel = new objects.Label(
-                "GAME OVER", "60px","Consolas", "#000000",
-                320, 240
+                "GAME OVER", "60px","Consolas", "#FFFF00",
+                320, 180, true
                 );
             this.addChild(this._gameOverLabel);
+
+            // Add Score Label
+            this._finalScoreLabel = new objects.Label(
+                "SCORE: " + core.score, "60px", "Consolas", "#FFFF00",
+                320, 240, true
+            )
+            this.addChild(this._finalScoreLabel);
 
             // add the start button
             this._restartButton = new objects.Button(
@@ -38,12 +51,15 @@ module scenes {
 
         public Update():void {
             // scene updates happen here...
+            this._ocean.update();
         }
 
         // EVENT HANDLERS ++++++++++++++++
 
         private _restartButtonClick(event:createjs.MouseEvent):void {
             // Switch the scene
+            core.lives = 5;
+            core.score = 0;
             core.scene = config.Scene.PLAY;
             core.changeScene();
         }

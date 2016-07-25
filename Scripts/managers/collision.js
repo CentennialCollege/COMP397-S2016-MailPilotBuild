@@ -16,10 +16,12 @@ var managers;
                     // if plane collides with cloud
                     if (other.name === "cloud") {
                         createjs.Sound.play("thunder");
+                        core.lives -= 1;
                     }
                     // if plane collides with island
                     if (other.name === "island") {
                         createjs.Sound.play("yay");
+                        core.score += 100;
                     }
                 }
             }

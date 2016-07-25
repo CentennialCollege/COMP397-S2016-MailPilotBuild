@@ -18,8 +18,11 @@ var scenes;
          *
          */
         Menu.prototype.Start = function () {
+            // Add Ocean Background
+            this._ocean = new objects.Ocean("ocean");
+            this.addChild(this._ocean);
             // Add Menu Label
-            this._menuLabel = new objects.Label("MENU SCENE", "60px", "Consolas", "#000000", 320, 240);
+            this._menuLabel = new objects.Label("MAIL PILOT", "60px", "Consolas", "#FFFF00", 320, 240, true);
             this.addChild(this._menuLabel);
             // add the start button
             this._startButton = new objects.Button("startButton", 320, 420, true);
@@ -31,6 +34,7 @@ var scenes;
         };
         Menu.prototype.Update = function () {
             // scene updates happen here...
+            this._ocean.update();
         };
         // EVENT HANDLERS ++++++++++++++++
         Menu.prototype._startButtonClick = function (event) {

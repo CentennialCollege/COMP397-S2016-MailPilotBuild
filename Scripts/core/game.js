@@ -11,6 +11,10 @@ var core;
 (function (core) {
     // make a reference to the canvas element
     var canvas = document.getElementById("canvas");
+    // score and lives variables
+    core.score = 0;
+    core.highScore = 0;
+    core.lives = 5;
     var helloLabel;
     var startButton; // reference to our button class
     // declare scene variables

@@ -13,6 +13,7 @@ module objects {
         private _name:string;
         private _position:Vector2;
         private _isColliding:boolean;
+        public sound:createjs.AbstractSoundInstance;
 
         // PUBLIC PROPERTIES +++++++++++++++++++++++++++++++++++++++
 
@@ -56,7 +57,7 @@ module objects {
             this._position = newPosition;
         }
 
-        get isColliding:boolean {
+        get isColliding():boolean {
             return this._isColliding;
         }
 

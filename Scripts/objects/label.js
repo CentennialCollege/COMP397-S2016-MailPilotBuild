@@ -14,14 +14,16 @@ var objects;
      */
     var Label = (function (_super) {
         __extends(Label, _super);
-        function Label(labelString, fontSize, fontFamily, fontColour, x, y) {
+        function Label(labelString, fontSize, fontFamily, fontColour, x, y, isCentered) {
             _super.call(this, labelString, (fontSize + " " + fontFamily), fontColour);
             this.labelString = labelString;
             this.fontSize = fontSize;
             this.fontFamily = fontFamily;
             this.fontColour = fontColour;
-            this.regX = this.getMeasuredWidth() * 0.5;
-            this.regY = this.getMeasuredHeight() * 0.5;
+            if (isCentered) {
+                this.regX = this.getMeasuredWidth() * 0.5;
+                this.regY = this.getMeasuredHeight() * 0.5;
+            }
             // assign label coordinates
             this.x = x;
             this.y = y;
