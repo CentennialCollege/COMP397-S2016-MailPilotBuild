@@ -32,6 +32,7 @@ module scenes {
             this._startButton = new objects.Button(
                 "startButton", 320, 420, true
             )
+            
             this.addChild(this._startButton);
 
             // Start button event listener

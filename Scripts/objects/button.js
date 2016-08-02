@@ -38,7 +38,7 @@ var objects;
          * @param {boolean} isCentered
          */
         function Button(imageString, x, y, isCentered) {
-            _super.call(this, core.assets.getResult(imageString));
+            _super.call(this, core.textureAtlas, imageString);
             // Check if user wants to change regX and regY values to the center 
             if (isCentered) {
                 this.regX = this.getBounds().width * 0.5;
@@ -72,7 +72,7 @@ var objects;
             this.alpha = 1.0;
         };
         return Button;
-    }(createjs.Bitmap));
+    }(createjs.Sprite));
     objects.Button = Button;
 })(objects || (objects = {}));
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 

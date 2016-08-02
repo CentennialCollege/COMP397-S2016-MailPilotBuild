@@ -24,14 +24,8 @@ var core;
     var play;
     // asset manifest for images and sounds
     var assetData = [
-        { id: "startButton", src: "../../Assets/images/startButton.png" },
-        { id: "restartButton", src: "../../Assets/images/restartButton.png" },
-        { id: "nextButton", src: "../../Assets/images/nextButton.png" },
-        { id: "exitButton", src: "../../Assets/images/exitButton.png" },
         { id: "ocean", src: "../../Assets/images/ocean.gif" },
-        { id: "island", src: "../../Assets/images/island.png" },
-        { id: "plane", src: "../../Assets/images/plane.png" },
-        { id: "cloud", src: "../../Assets/images/cloud.png" },
+        { id: "atlas", src: "../../Assets/images/atlas.png" },
         { id: "thunder", src: "../../Assets/audio/thunder.ogg" },
         { id: "yay", src: "../../Assets/audio/yay.ogg" },
         { id: "engine", src: "../../Assets/audio/engine.ogg" }
@@ -59,6 +53,31 @@ var core;
         core.stage.enableMouseOver(20);
         createjs.Ticker.framerate = 60;
         createjs.Ticker.on("tick", gameLoop); // create an event listener for the tick event
+        var atlasData = {
+            "images": [
+                core.assets.getResult("atlas")
+            ],
+            "frames": [
+                [1, 1, 226, 178, 0, 0, 0],
+                [229, 1, 62, 62, 0, 0, 0],
+                [229, 65, 200, 50, 0, 0, 0],
+                [229, 117, 200, 50, 0, 0, 0],
+                [229, 169, 200, 50, 0, 0, 0],
+                [1, 181, 200, 50, 0, 0, 0],
+                [293, 1, 62, 51, 0, -3, -9]
+            ],
+            "animations": {
+                "cloud": [0],
+                "island": [1],
+                "exitButton": [2],
+                "nextButton": [3],
+                "restartButton": [4],
+                "startButton": [5],
+                "plane": [6]
+            }
+        };
+        // added textureAtlas
+        core.textureAtlas = new createjs.SpriteSheet(atlasData);
         // setup the default scene
         core.scene = config.Scene.MENU;
         changeScene();

@@ -21,7 +21,7 @@ module objects {
      * @class Button
      * @extends {createjs.Bitmap}
      */
-    export class Button extends createjs.Bitmap {
+    export class Button extends createjs.Sprite {
 
         // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         /**
@@ -34,7 +34,7 @@ module objects {
          * @param {boolean} isCentered
          */
         constructor(imageString: string, x:number, y:number, isCentered:boolean) {
-            super(core.assets.getResult(imageString));
+            super(core.textureAtlas, imageString);
 
             // Check if user wants to change regX and regY values to the center 
             if(isCentered) {

@@ -10,7 +10,7 @@ var objects;
      *
      * @export
      * @class Ocean
-     * @extends {objects.GameObject}
+     * @extends {createjs.Bitmap}
      */
     var Ocean = (function (_super) {
         __extends(Ocean, _super);
