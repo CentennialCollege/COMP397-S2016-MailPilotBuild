@@ -22,7 +22,7 @@ var scenes;
             this._ocean = new objects.Ocean("ocean");
             this.addChild(this._ocean);
             // Add Menu Label
-            this._menuLabel = new objects.Label("MAIL PILOT", "60px", "Consolas", "#FFFF00", 320, 240, true);
+            this._menuLabel = new objects.Label("MAIL PILOT", "60px", "Dock51", "#FFFF00", 320, 240, true);
             this.addChild(this._menuLabel);
             // add the start button
             this._startButton = new objects.Button("startButton", 320, 420, true);

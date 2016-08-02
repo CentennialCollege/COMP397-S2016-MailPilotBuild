@@ -23,7 +23,7 @@ module scenes {
 
             // Add Menu Label
             this._menuLabel = new objects.Label(
-                "MAIL PILOT", "60px","Consolas", "#FFFF00",
+                "MAIL PILOT", "60px","Dock51", "#FFFF00",
                 320, 240, true
                 );
             this.addChild(this._menuLabel);
