@@ -1,10 +1,10 @@
 @font-face{ 
 	font-family: 'Dock51';
-	src: url('../Assets/fonts/dock51.eot');
-	src: url('../Assets/fonts/dock51.eot?#iefix') format('embedded-opentype'),
-	     url('../Assets/fonts/dock51.woff') format('woff'),
-	     url('../Assets/fonts/dock51.ttf') format('truetype'),
-	     url('../Assets/fonts/dock51.svg#webfont') format('svg');
+	src: url('../Assets/fonts/dock51-webfont.eot');
+	src: url('../Assets/fonts/dock51-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../Assets/fonts/dock51-webfont.woff') format('woff'),
+	     url('../Assets/fonts/dock51-webfont.ttf') format('truetype'),
+	     url('../Assets/fonts/dock51-webfont.svg#webfont') format('svg');
     font-weight: normal;
     font-style: normal;
 }
