@@ -1,27 +1,36 @@
 {
 
 "images": [
-    "../../Assets/images/atlas.png"
+    "atlas.png"
 ],
 
 "frames": [
     [1, 1, 226, 178, 0, 0, 0],
-    [229, 1, 62, 62, 0, 0, 0],
-    [229, 65, 200, 50, 0, 0, 0],
-    [229, 117, 200, 50, 0, 0, 0],
-    [229, 169, 200, 50, 0, 0, 0],
-    [1, 181, 200, 50, 0, 0, 0],
-    [293, 1, 62, 51, 0, -3, -9]
+    [229, 1, 200, 50, 0, 0, 0],
+    [431, 1, 62, 62, 0, 0, 0],
+    [229, 53, 200, 50, 0, 0, 0],
+    [431, 65, 62, 51, 0, -3, -9],
+    [229, 105, 200, 50, 0, 0, 0],
+    [431, 118, 62, 51, 0, -3, -9],
+    [229, 157, 200, 50, 0, 0, 0],
+    [431, 171, 62, 51, 0, -3, -9]
 ],
 
 "animations": {
     "cloud": [0],
-    "island": [1],
-    "exitButton": [2],
+    "exitButton": [1],
+    "island": [2],
     "nextButton": [3],
-    "restartButton": [4],
-    "startButton": [5],
-    "plane": [6]
-}
+    "plane1": [4],
+    "restartButton": [5],
+    "plane2": [6],
+    "startButton": [7],
+    "plane3": [8]
+},
+
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:4cf72cb8f55f306386e828ec8e2e7540:0457bad7c8147bb66e2387709cecbba1:cbce6b53f0f49e0bf15173c25c41f876$",
+        "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
+]
 
 }
