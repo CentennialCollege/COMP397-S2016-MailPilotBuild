@@ -16,6 +16,10 @@ namespace core {
 
     // declare a reference to the Preloader
     export let assets: createjs.LoadQueue;
+
+    // declare textureAtlas
+    export let textureAtlas: createjs.SpriteSheet;
+
     // make a reference to the canvas element
     let canvas: HTMLElement = document.getElementById("canvas");
     // create a reference to a stage container
@@ -38,22 +42,41 @@ namespace core {
     let over: scenes.Over;
     let play: scenes.Play;
 
-
-
     // asset manifest for images and sounds
     let assetData: objects.Asset[] = [
-        { id: "startButton", src: "../../Assets/images/startButton.png" },
-        { id: "restartButton", src: "../../Assets/images/restartButton.png" },
-        { id: "nextButton", src: "../../Assets/images/nextButton.png" },
-        { id: "exitButton", src: "../../Assets/images/exitButton.png" },
         { id: "ocean", src: "../../Assets/images/ocean.gif" },
-        { id: "island", src: "../../Assets/images/island.png" },
-        { id: "plane", src: "../../Assets/images/plane.png" },
-        { id: "cloud", src: "../../Assets/images/cloud.png" },
         { id: "thunder", src: "../../Assets/audio/thunder.ogg" },
         { id: "yay", src: "../../Assets/audio/yay.ogg" },
         { id: "engine", src: "../../Assets/audio/engine.ogg" }
     ];
+
+let atlasData = {
+
+"images": [
+    "../../Assets/images/atlas.png"
+],
+
+"frames": [
+    [1, 1, 226, 178, 0, 0, 0],
+    [229, 1, 62, 62, 0, 0, 0],
+    [229, 65, 200, 50, 0, 0, 0],
+    [229, 117, 200, 50, 0, 0, 0],
+    [229, 169, 200, 50, 0, 0, 0],
+    [1, 181, 200, 50, 0, 0, 0],
+    [293, 1, 62, 51, 0, -3, -9]
+],
+
+"animations": {
+    "cloud": [0],
+    "island": [1],
+    "exitButton": [2],
+    "nextButton": [3],
+    "restartButton": [4],
+    "startButton": [5],
+    "plane": [6]
+}
+
+};
 
     /**
      * This method preloads assets for the game
@@ -80,6 +103,9 @@ namespace core {
         stage.enableMouseOver(20);
         createjs.Ticker.framerate = 60;
         createjs.Ticker.on("tick", gameLoop); // create an event listener for the tick event
+        
+        textureAtlas = new createjs.SpriteSheet(atlasData);
+        
 
         // setup the default scene
         scene = config.Scene.MENU;
