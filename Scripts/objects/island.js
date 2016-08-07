@@ -37,7 +37,7 @@ var objects;
         Island.prototype._reset = function () {
             this.y = -this.height;
             // get a random x location
-            this.x = Math.floor((Math.random() * (640 - (this.width * 0.5))) + (this.width * 0.5));
+            this.x = Math.floor((Math.random() * (640 - 2 * (this.width * 0.5))) + (this.width * 0.5));
         };
         /**
          * This method checks if the object has reached its boundaries

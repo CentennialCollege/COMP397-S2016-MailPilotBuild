@@ -36,7 +36,7 @@ module objects {
             this.y = -this.height;
 
             // get a random x location
-            this.x = Math.floor((Math.random() * (640 - (this.width * 0.5))) + (this.width * 0.5));
+            this.x = Math.floor((Math.random() * (640 - 2 * (this.width * 0.5))) + (this.width * 0.5));
         }
 
         /**
