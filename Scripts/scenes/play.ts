@@ -10,6 +10,9 @@ module scenes {
         private _livesLabel: objects.Label;
         private _engineSound: createjs.AbstractSoundInstance;
         private _bullets: objects.Bullet[];
+        private _keyboardControls: objects.KeyboardControls;
+
+        private _frameCount: number = 0;
 
         /**
          * Creates an instance of Menu.
@@ -37,13 +40,11 @@ module scenes {
             this.addChild(this._island);
 
             this._bullets = new Array<objects.Bullet>();
-            this._bullets.push(new objects.Bullet("bullet"));
-            this.addChild(this._bullets[0]);
-            /*
+
             for (let bullet = 0; bullet < 10; bullet++) {
                 this._bullets.push(new objects.Bullet("bullet"));
                 this.addChild(this._bullets[bullet]);
-            }*/
+            }
 
 
             // player object
@@ -51,11 +52,6 @@ module scenes {
             this.addChild(this._player);
             this._engineSound = createjs.Sound.play("engine");
             this._engineSound.loop = -1;
-            
-            // TEST TEST TEST
-            
-            
-            this._bullets[0].Fire(this._player.position);
 
             // cloud array
             this._clouds = new Array<objects.Cloud>();
@@ -66,6 +62,9 @@ module scenes {
 
             // include a collision managers
             this._collision = new managers.Collision();
+
+
+            this._keyboardControls = new objects.KeyboardControls();
 
             // add lives and score label
             this._livesLabel = new objects.Label("Lives: " + core.lives, "40px", "Dock51", "#FFFF00", 10, 5, false);
@@ -79,6 +78,8 @@ module scenes {
         }
 
         public Update(): void {
+            this._frameCount++;
+
             this._ocean.update();
             this._island.update();
             this._player.update();
@@ -98,13 +99,25 @@ module scenes {
             });
 
             // checks collisions between each cloud and each bullet
-            
+
             this._clouds.forEach(cloud => {
                 this._bullets.forEach(bullet => {
                     this._collision.check(cloud, bullet);
                 });
             });
-            
+
+            // check if spacebar is pushed
+            if (this._frameCount % 10 == 0) {
+                if (this._keyboardControls.fire) {
+                
+                    for (var bullet in this._bullets) {
+                        if (!this._bullets[bullet].InFlight) {
+                            this._bullets[bullet].Fire(this._player.position);
+                            break;
+                        }
+                    }
+                }
+            }
 
 
 

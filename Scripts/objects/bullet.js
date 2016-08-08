@@ -82,7 +82,7 @@ var objects;
         };
         Bullet.prototype.start = function () {
             this._defaultPosition = new objects.Vector2(1000, 1000);
-            this.Speed = 5;
+            this.Speed = 10;
             this.Reset();
         };
         Bullet.prototype.update = function () {
