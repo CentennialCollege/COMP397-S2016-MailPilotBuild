@@ -87,6 +87,7 @@ namespace core {
 
             "frames": [
                 [1, 1, 226, 178, 0, 0, 0],
+                [1, 181, 16, 16, 0, 0, 0],
                 [229, 1, 200, 50, 0, 0, 0],
                 [431, 1, 62, 62, 0, 0, 0],
                 [229, 53, 200, 50, 0, 0, 0],
@@ -99,15 +100,16 @@ namespace core {
 
             "animations": {
                 "cloud": [0],
-                "exitButton": [1],
-                "island": [2],
-                "nextButton": [3],
-                "restartButton": [5],
-                "startButton": [7],
+                "bullet": [1],
+                "exitButton": [2],
+                "island": [3],
+                "nextButton": [4],
+                "restartButton": [6],
+                "startButton": [8],
                 "plane": {
-                    "frames":[4,6,8],
+                    "frames": [5, 7, 9],
                     "speed": 0.5
-                } 
+                }
             }
 
         };

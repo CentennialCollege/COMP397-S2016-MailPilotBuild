@@ -6,6 +6,7 @@
 
 "frames": [
     [1, 1, 226, 178, 0, 0, 0],
+    [1, 181, 16, 16, 0, 0, 0],
     [229, 1, 200, 50, 0, 0, 0],
     [431, 1, 62, 62, 0, 0, 0],
     [229, 53, 200, 50, 0, 0, 0],
@@ -18,18 +19,19 @@
 
 "animations": {
     "cloud": [0],
-    "exitButton": [1],
-    "island": [2],
-    "nextButton": [3],
-    "plane1": [4],
-    "restartButton": [5],
-    "plane2": [6],
-    "startButton": [7],
-    "plane3": [8]
+    "bullet": [1],
+    "exitButton": [2],
+    "island": [3],
+    "nextButton": [4],
+    "plane1": [5],
+    "restartButton": [6],
+    "plane2": [7],
+    "startButton": [8],
+    "plane3": [9]
 },
 
 "texturepacker": [
-        "SmartUpdateHash: $TexturePacker:SmartUpdate:4cf72cb8f55f306386e828ec8e2e7540:0457bad7c8147bb66e2387709cecbba1:cbce6b53f0f49e0bf15173c25c41f876$",
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:123919f708d459c28f9ff8d55d11db1f:f4b2c35c985fe50526effad6d0f10643:cbce6b53f0f49e0bf15173c25c41f876$",
         "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
 ]
 
