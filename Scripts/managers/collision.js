@@ -8,19 +8,26 @@ var managers;
         };
         Collision.prototype.update = function () {
         };
-        Collision.prototype.check = function (player, other) {
+        Collision.prototype.check = function (prime, other) {
             //check to see if object is colliding
-            if (objects.Vector2.distance(player.position, other.position) < (player.halfHeight + other.halfHeight)) {
+            if (objects.Vector2.distance(prime.position, other.position) < (prime.halfHeight + other.halfHeight)) {
                 if (!other.isColliding) {
                     other.isColliding = true;
-                    // if plane collides with cloud
+                    // if prime object collides with cloud
                     if (other.name === "cloud") {
                         createjs.Sound.play("thunder");
                         core.lives -= 1;
                     }
-                    // if plane collides with island
+                    // if prime object collides with island
                     if (other.name === "island") {
                         createjs.Sound.play("yay");
+                        core.score += 100;
+                    }
+                    // if prime object collides with bullet
+                    if (other.name === "bullet") {
+                        createjs.Sound.play("bulletHit");
+                        prime.Reset();
+                        other.Reset();
                         core.score += 100;
                     }
                 }

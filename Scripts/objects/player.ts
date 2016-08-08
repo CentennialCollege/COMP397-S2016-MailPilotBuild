@@ -57,6 +57,9 @@ module objects {
          */
         public start():void {
             this.y = 430;
+            this.x = 320;
+            this.position.x = this.x;
+            this.position.y = this.y;
         }
 
         /**

@@ -28,7 +28,9 @@ var core;
         { id: "atlas", src: "../../Assets/images/atlas.png" },
         { id: "thunder", src: "../../Assets/audio/thunder.ogg" },
         { id: "yay", src: "../../Assets/audio/yay.ogg" },
-        { id: "engine", src: "../../Assets/audio/engine.ogg" }
+        { id: "engine", src: "../../Assets/audio/engine.ogg" },
+        { id: "bulletHit", src: "../../Assets/audio/bulletHit.wav" },
+        { id: "bulletHit", src: "../../Assets/audio/bulletFire.wav" }
     ];
     /**
      * This method preloads assets for the game

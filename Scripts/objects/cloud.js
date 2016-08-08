@@ -34,7 +34,7 @@ var objects;
          * @method _reset
          * @returns {void}
          */
-        Cloud.prototype._reset = function () {
+        Cloud.prototype.Reset = function () {
             this._dy = Math.floor((Math.random() * 5) + 5); // vertical speed
             this._dx = Math.floor((Math.random() * 4) - 2); // horizontal drift
             this.y = -this.height;
@@ -50,7 +50,7 @@ var objects;
          */
         Cloud.prototype._checkBounds = function () {
             if (this.y >= (480 + (this.height * 0.5))) {
-                this._reset();
+                this.Reset();
             }
         };
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++
@@ -63,7 +63,7 @@ var objects;
          * @returns {void}
          */
         Cloud.prototype.start = function () {
-            this._reset();
+            this.Reset();
         };
         /**
          * This method updates the object's properties

@@ -89,6 +89,10 @@ module objects {
             this.position = new Vector2(this.x, this.y);
             this.isColliding = false;
         }
+        
+        public Reset():void {
+            
+        }
 
         /**
          * This method is used to initialize public properties 

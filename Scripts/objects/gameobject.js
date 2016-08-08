@@ -100,6 +100,8 @@ var objects;
             this.position = new objects.Vector2(this.x, this.y);
             this.isColliding = false;
         };
+        GameObject.prototype.Reset = function () {
+        };
         /**
          * This method is used to initialize public properties
          * and private instance variables

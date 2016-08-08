@@ -9,6 +9,7 @@ module scenes {
         private _scoreLabel: objects.Label;
         private _livesLabel: objects.Label;
         private _engineSound: createjs.AbstractSoundInstance;
+        private _bullets: objects.Bullet[];
 
         /**
          * Creates an instance of Menu.
@@ -35,11 +36,26 @@ module scenes {
             this._island = new objects.Island("island");
             this.addChild(this._island);
 
+            this._bullets = new Array<objects.Bullet>();
+            this._bullets.push(new objects.Bullet("bullet"));
+            this.addChild(this._bullets[0]);
+            /*
+            for (let bullet = 0; bullet < 10; bullet++) {
+                this._bullets.push(new objects.Bullet("bullet"));
+                this.addChild(this._bullets[bullet]);
+            }*/
+
+
             // player object
             this._player = new objects.Player("plane");
             this.addChild(this._player);
             this._engineSound = createjs.Sound.play("engine");
             this._engineSound.loop = -1;
+            
+            // TEST TEST TEST
+            
+            
+            this._bullets[0].Fire(this._player.position);
 
             // cloud array
             this._clouds = new Array<objects.Cloud>();
@@ -68,12 +84,29 @@ module scenes {
             this._player.update();
             this._collision.check(this._player, this._island);
 
+            this._bullets.forEach(bullet => {
+                // update each bullet
+                bullet.update();
+            });
 
-            // update each cloud
             this._clouds.forEach(cloud => {
+                // update each cloud
                 cloud.update();
+
+                // checks collisin with the player and each cloud
                 this._collision.check(this._player, cloud);
             });
+
+            // checks collisions between each cloud and each bullet
+            
+            this._clouds.forEach(cloud => {
+                this._bullets.forEach(bullet => {
+                    this._collision.check(cloud, bullet);
+                });
+            });
+            
+
+
 
             this._updateScoreBoard();
 
